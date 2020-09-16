@@ -1,9 +1,12 @@
 from selenium import webdriver
 
 import time
+import json
 
+with open('config.json') as f:
+    config = json.load(f)
 
-driver = webdriver.Chrome('/mnt/c/users/ashwi/chromedriver.exe')
+driver = webdriver.Chrome(config['driver_location'])
 
 
 driver.get("http://casesearch.courts.state.md.us/casesearch/inquiry-index.jsp")
